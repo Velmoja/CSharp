@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+
 class Program
 {
     
@@ -29,6 +30,9 @@ class Program
             {
                 Console.WriteLine($"'{entry.Key}' - {entry.Value}");
             }
+            Console.Write("Самая длинная подстрока начинающаяся и заканчивающаяся на гласную: ");
+            string subStr = FindLongestSubs(inversStr);
+            Console.Write(subStr);
         }
         else
         {
@@ -77,5 +81,35 @@ class Program
         }
 
         return charCount;
+    }
+
+    static string FindLongestSubs(string str)
+    {
+        string vowels = "aeiou";
+        char[] first = vowels.ToCharArray();
+        string input = str;
+        
+        int indexFirst = input.IndexOfAny(first);
+        int indexSecond = input.LastIndexOfAny(first);
+
+        if(indexFirst >= 0 && indexSecond >= 0)
+        {
+            string substring = input.Substring(indexFirst, indexSecond - indexFirst + 1);
+            if (substring.Length >= 2)
+            {
+                Console.WriteLine(substring);
+            }
+            else
+            {
+                Console.Write("введен один галсный символ - ");
+                Console.Write(substring);
+            }
+        }
+        else
+        {
+            Console.WriteLine("не введено ни одной гласной буквы");
+        }
+        
+        return null;
     }
 }
