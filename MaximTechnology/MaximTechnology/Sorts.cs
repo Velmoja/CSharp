@@ -131,7 +131,8 @@ class TreeSort
         {
             treeSort.Insert(character);
         }
-        Console.WriteLine("\nSorted Characters (Tree sort with duplicates):");
+        Console.WriteLine("Сортировка методом TreeSort:");
         treeSort.InOrderTraversal();
+        Console.WriteLine();
     }
 }
