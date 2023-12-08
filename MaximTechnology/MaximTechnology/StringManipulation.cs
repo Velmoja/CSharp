@@ -52,6 +52,7 @@ class StringManipulation
             {
                 Console.Write("введен один гласный символ - ");
                 Console.Write(substring);
+                Console.WriteLine();
             }
         }
         else

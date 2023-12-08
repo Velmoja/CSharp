@@ -39,7 +39,6 @@ class Program
             Console.Write("Самая длинная подстрока начинающаяся и заканчивающаяся на гласную: ");
             string subStr = stringManipulation.FindLongestSubs(inversStr);
             Console.Write(subStr);
-            
             char[] masForSort = inversStr.ToCharArray();
 
             Console.WriteLine("Выберите тип сортировки:");
