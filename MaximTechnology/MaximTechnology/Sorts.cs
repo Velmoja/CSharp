@@ -23,15 +23,13 @@ class Sorts
             if (array[j] < pivot)
             {
                 i++;
-
-                // Swap array[i] and array[j]
+                
                 char temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
             }
         }
-
-        // Swap array[i + 1] and array[high] (pivot)
+        
         char tempPivot = array[i + 1];
         array[i + 1] = array[high];
         array[high] = tempPivot;
@@ -112,8 +110,7 @@ class TreeSort
         if (root != null)
         {
             InOrderTraversalRec(root.Left);
-
-            // Печать символа и количества повторений
+            
             for (int i = 0; i < root.Count; i++)
             {
                 Console.Write(root.Data + " ");
@@ -131,7 +128,8 @@ class TreeSort
         {
             treeSort.Insert(character);
         }
-        Console.WriteLine("\nSorted Characters (Tree sort with duplicates):");
+        Console.WriteLine("Сортировка методом TreeSort:");
         treeSort.InOrderTraversal();
+        Console.WriteLine();
     }
 }

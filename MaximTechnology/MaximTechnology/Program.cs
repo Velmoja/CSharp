@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using MaximTechnology;
 
 class Program
 {
@@ -8,6 +9,7 @@ class Program
         StringManipulation stringManipulation = new StringManipulation();
         Sorts sorts = new Sorts();
         TreeSort treeSort = new TreeSort();
+        RandomNumber randomNumber = new RandomNumber();
         
         string input = stringManipulation.GetUserInput();
         char[] invalidCharacters = stringManipulation.EnglishOrNot(input);
@@ -57,6 +59,18 @@ class Program
                 default:
                     Console.WriteLine("Некорректный выбор.");
                     break;
+            }
+            
+            int randomIndex = randomNumber.GetRandomNumberFromApi(inversStr.Length).Result;
+            
+            if (randomIndex >= 0 && randomIndex < inversStr.Length)
+            {
+                inversStr = inversStr.Remove(randomIndex-1, 1);
+                Console.WriteLine($"Строка после удаления символа: {inversStr}");
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: случайное число вне допустимого диапазона.");
             }
         }
         else
