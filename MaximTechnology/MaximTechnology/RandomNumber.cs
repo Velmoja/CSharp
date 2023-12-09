@@ -41,9 +41,7 @@ public class RandomNumber
                 Console.WriteLine($"Ошибка при выполнении запроса: {ex.Message}");
             }
             
-            return -1;
+            return new Random().Next(0, maxValue);;
         }
     }
-    
-    
 }
