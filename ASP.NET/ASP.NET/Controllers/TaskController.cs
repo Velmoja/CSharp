@@ -19,7 +19,7 @@ namespace Task7.Controllers
             CharacterCounter characterCounter = new CharacterCounter();
             
             char[] invalidCharacters = stringManipulation.EnglishOrNot(input);
-            
+
             if (invalidCharacters.Length == 0)
             {
                 string reverse = stringManipulation.Manipulate(input);
@@ -38,7 +38,7 @@ namespace Task7.Controllers
             }
             else
             {
-                return BadRequest("HTTP ошибка 400 Bad Request, были введены неверные символы - " + string.Join(" ", invalidCharacters));
+                return BadRequest("HTTP ошибка 400 Bad Request, были введены неверные символы -- " + string.Join(" ", invalidCharacters));
             }
         }
     }
