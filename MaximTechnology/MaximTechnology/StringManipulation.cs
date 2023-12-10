@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-class StringManipulation
+public class StringManipulation
 {
     public string GetUserInput()
     {

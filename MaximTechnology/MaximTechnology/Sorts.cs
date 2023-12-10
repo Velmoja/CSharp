@@ -1,6 +1,6 @@
 using System;
 
-class Sorts
+public class Sorts
 {
     public void Sort(char[] array, int low, int high)
     {
@@ -13,7 +13,7 @@ class Sorts
         }
     }
 
-    public static int Partition(char[] array, int low, int high)
+    public int Partition(char[] array, int low, int high)
     {
         char pivot = array[high];
         int i = low - 1;
@@ -23,15 +23,13 @@ class Sorts
             if (array[j] < pivot)
             {
                 i++;
-
-                // Swap array[i] and array[j]
+                
                 char temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
             }
         }
-
-        // Swap array[i + 1] and array[high] (pivot)
+        
         char tempPivot = array[i + 1];
         array[i + 1] = array[high];
         array[high] = tempPivot;
@@ -71,7 +69,7 @@ class TreeNode
     }
 }
 
-class TreeSort
+public class TreeSort
 {
     private TreeNode root;
 

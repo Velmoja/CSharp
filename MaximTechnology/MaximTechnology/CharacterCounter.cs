@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class CharacterCounter
+public class CharacterCounter
 {
     public Dictionary<char, int> CountCharacters(string str)
     {
