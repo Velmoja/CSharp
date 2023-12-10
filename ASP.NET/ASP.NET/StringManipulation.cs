@@ -4,6 +4,12 @@ using MaximTechnology;
 
 class StringManipulation
 {
+    public StringManipulation(RandomApiBoundaryProvider boundaryProvider)
+    {
+        _boundaryProvider = boundaryProvider;
+    }
+    
+    private readonly RandomApiBoundaryProvider _boundaryProvider;
     public string Manipulate(string str)
     {
         return IsEvenLength(str) ? ReverseHalves(str) : ConcatenateWithReversed(str);
@@ -52,11 +58,11 @@ class StringManipulation
 
     public string RemoveRandomChar(string str)
     {
-        int randomIndex = RandomNumber.GetRandomNumberFromApi(str.Length).Result;
+        int randomIndex = _boundaryProvider.GetMaxBoundaryAsync(str).Result;
 
         if (randomIndex >= 0 && randomIndex < str.Length)
         {
-            return str.Remove(randomIndex - 1, 1);
+            return str.Remove(randomIndex, 1);
         }
 
         throw new IndexOutOfRangeException();
